@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- ==================== 导航栏 ==================== -->
+    <!-- 导航栏 -->
     <nav>
         <div class="nav-container">
             <span class="logo">🔊 声纹智析</span>
@@ -22,20 +22,20 @@
         </div>
     </nav>
 
-    <!-- ==================== 头部 ==================== -->
+    <!-- 头部 -->
     <header>
         <h1>🔊 声纹智析</h1>
         <p class="subtitle">AI赋能的语音声学特征智能测量与康复训练系统</p>
         <p class="description">基于物理声学原理 · AI驱动分析 · 虚拟仿真 + 真实语音双模式 · 零硬件成本</p>
     </header>
 
-    <!-- ==================== 虚拟实验台 ==================== -->
+    <!-- 虚拟实验台 -->
     <section id="lab">
         <h2>🔬 虚拟实验台</h2>
         <p class="section-intro">支持<strong>虚拟仿真</strong>和<strong>真实语音分析</strong>两种模式，真实分析采用纯前端LPC算法</p>
 
         <div class="lab-container">
-            <!-- ========== 左侧控制面板 ========== -->
+            <!-- 左侧控制面板 -->
             <div class="control-panel">
                 <h3>🎮 实验参数设置</h3>
 
@@ -87,7 +87,7 @@
                 <button id="analyzeBtn" class="btn-analyze">🔍 AI 仿真分析</button>
                 <button id="resetBtn" class="btn-reset">🔄 恢复默认参数</button>
 
-                <!-- ========== 真实语音输入模块 ========== -->
+                <!-- 真实语音输入模块 -->
                 <div class="recording-section">
                     <div class="section-divider"><span>🎙️ 真实语音分析</span></div>
                     <p class="recording-hint">纯前端LPC算法 · 无需后端 · 录音后自动提取共振峰</p>
@@ -117,16 +117,14 @@
                 </div>
             </div>
 
-            <!-- ========== 右侧结果展示 ========== -->
+            <!-- 右侧结果展示 -->
             <div class="result-panel">
                 <h3>📊 分析结果</h3>
 
-                <!-- 分析模式标识 -->
                 <div id="analysisMode" class="analysis-mode mode-empty">
                     📡 等待分析...
                 </div>
 
-                <!-- 真实数据来源标识 -->
                 <div id="dataSourceBadge" class="data-source-badge hidden">
                     ✅ 真实语音数据 · 纯前端LPC分析 · 非仿真
                 </div>
@@ -165,14 +163,12 @@
                     </div>
                 </div>
 
-                <!-- 频谱图 -->
                 <div class="chart-container">
                     <h4>📊 频谱图（含共振峰标记）</h4>
                     <canvas id="spectrumCanvas" width="700" height="250"></canvas>
                     <p class="chart-note">🔴 F₁ &nbsp; 🟢 F₂ &nbsp; 🟠 F₃ &nbsp; | &nbsp; 峰值对应共振峰频率</p>
                 </div>
 
-                <!-- AI反馈 -->
                 <div class="feedback-box">
                     <h4>💬 AI 助教智能反馈</h4>
                     <div id="feedbackContent">
@@ -183,19 +179,13 @@
         </div>
     </section>
 
-    <!-- ==================== 共振峰原理 ==================== -->
+    <!-- 共振峰原理 -->
     <section id="formant-theory">
         <h2>📚 第一、第二、第三共振峰（F₁、F₂、F₃）原理详解</h2>
 
         <div class="theory-block">
             <h3>一、直观理解：声道是一根"会变形的管子"</h3>
-            <p>
-                把声道想象成一根从声带到嘴唇的<strong>粗细不均匀的管子</strong>，长度约
-                <strong>17厘米（成年男性）</strong>。
-                声带振动产生的声音要穿过这根管子，管子对不同频率的声音有"偏好"——
-                <span class="highlight-text">有些频率被放大，有些被抑制</span>。
-                被放大的那几个频率就是<strong>共振峰</strong>，从低到高依次叫 <strong>F₁、F₂、F₃</strong>。
-            </p>
+            <p>把声道想象成一根从声带到嘴唇的<strong>粗细不均匀的管子</strong>，长度约<strong>17厘米（成年男性）</strong>。声带振动产生的声音要穿过这根管子，管子对不同频率的声音有"偏好"——<span class="highlight-text">有些频率被放大，有些被抑制</span>。被放大的那几个频率就是<strong>共振峰</strong>，从低到高依次叫 <strong>F₁、F₂、F₃</strong>。</p>
             <div class="analogy-box">
                 <p>💡 <strong>类比理解：</strong>对着空啤酒瓶吹气会听到一个"呜——"的声音，这个音高由瓶子的形状和大小决定。声道也是同样的道理——舌头、下巴、嘴唇移动会改变声道形状，共振峰频率也就跟着变化。</p>
             </div>
@@ -204,16 +194,11 @@
         <div class="theory-block">
             <h3>二、物理原理：驻波与共振条件</h3>
             <p>把声道简化为一根<strong>一端封闭（声带处）、一端开口（嘴唇处）</strong>的均匀管道。声波在闭端反射时<strong>相位反转</strong>，在开端反射时<strong>相位不变</strong>。</p>
-            <p>形成驻波的条件：管长等于 <strong>四分之一波长的奇数倍</strong>——</p>
-            <div class="formula-box">
-                L = (2n − 1) · λ<sub>n</sub> / 4 &nbsp;&nbsp;&nbsp;&nbsp;（n = 1, 2, 3...）
-            </div>
+            <p>形成驻波的条件：管长等于 <strong>四分之一波长的奇数倍</strong></p>
+            <div class="formula-box">L = (2n − 1) · λ<sub>n</sub> / 4 &nbsp;&nbsp;&nbsp;&nbsp;（n = 1, 2, 3...）</div>
             <p>由 λ = c / F，得到共振峰频率公式：</p>
-            <div class="formula-box highlight">
-                F<sub>n</sub> = (2n − 1) · c / (4L)
-            </div>
+            <div class="formula-box highlight">F<sub>n</sub> = (2n − 1) · c / (4L)</div>
             <p>其中 <strong>c ≈ 340 m/s</strong> 是空气中的声速，<strong>L</strong> 是声道等效长度。</p>
-
             <h4>🔢 代入实际数值验证</h4>
             <p>成年男性声道长度约 <strong>L = 0.17 m</strong>，代入公式：</p>
             <div class="calculation-steps">
@@ -267,9 +252,7 @@
             <h3>四、六个标准单元音共振峰对照表</h3>
             <div class="table-scroll">
             <table class="full-table">
-                <thead>
-                    <tr><th>元音</th><th>F₁ (Hz)</th><th>F₂ (Hz)</th><th>F₃ (Hz)</th><th>舌位</th><th>开口度</th><th>唇形</th></tr>
-                </thead>
+                <thead><tr><th>元音</th><th>F₁ (Hz)</th><th>F₂ (Hz)</th><th>F₃ (Hz)</th><th>舌位</th><th>开口度</th><th>唇形</th></tr></thead>
                 <tbody>
                     <tr><td><strong>/i/</strong></td><td>270</td><td>2300</td><td>3000</td><td>高·前</td><td>小</td><td>展唇</td></tr>
                     <tr><td><strong>/u/</strong></td><td>350</td><td>700</td><td>2200</td><td>高·后</td><td>小</td><td>圆唇</td></tr>
@@ -285,27 +268,23 @@
         <div class="theory-block">
             <h3>五、物理验证：从共振峰反推声道长度</h3>
             <p>学生可以通过实测的 F₁ 和 F₂，利用公式反推自己的声道等效长度：</p>
-            <div class="formula-box highlight">
-                L = c / [2 × (F₂ − F₁)]
-            </div>
+            <div class="formula-box highlight">L = c / [2 × (F₂ − F₁)]</div>
             <p><strong>示例：</strong>测得 F₁=520Hz，F₂=1500Hz → L = 340 / [2 × (1500−520)] ≈ <strong>0.173 m = 17.3 cm</strong></p>
             <p class="note-text">与成人男性解剖学数据（16-18 cm）完全吻合，物理理论得到实验验证。</p>
         </div>
     </section>
 
-    <!-- ==================== 元音声学空间 ==================== -->
+    <!-- 元音声学空间 -->
     <section id="vowel-space">
         <h2>🗺️ F₁-F₂ 元音声学空间图</h2>
         <p class="section-intro">纵轴F₁反映舌位高低（↓高↑低），横轴F₂反映舌位前后（→前←后）</p>
         <div class="chart-container">
             <canvas id="vowelSpaceCanvas" width="650" height="480"></canvas>
         </div>
-        <p class="note-text" style="text-align:center;">
-            <strong>关键规律：</strong>/i/ 在左上角（高·前），/a/ 在右下角（低·后），/u/ 在左侧中间（高·后）。
-        </p>
+        <p class="note-text" style="text-align:center;"><strong>关键规律：</strong>/i/ 在左上角（高·前），/a/ 在右下角（低·后），/u/ 在左侧中间（高·后）。</p>
     </section>
 
-    <!-- ==================== 方法对比 ==================== -->
+    <!-- 方法对比 -->
     <section id="comparison">
         <h2>📊 AI 方法 vs 传统方法精度对比</h2>
         <p class="section-intro">同一组语音样本，三种方法测量共振峰频率，对比与真实值的偏差</p>
@@ -313,9 +292,7 @@
             <canvas id="comparisonCanvas" width="900" height="420"></canvas>
         </div>
         <table class="full-table">
-            <thead>
-                <tr><th>对比维度</th><th>传统示波器法</th><th>Praat手工标注</th><th class="col-highlight">本系统AI自动提取</th></tr>
-            </thead>
+            <thead><tr><th>对比维度</th><th>传统示波器法</th><th>Praat手工标注</th><th class="col-highlight">本系统AI自动提取</th></tr></thead>
             <tbody>
                 <tr><td>测量效率</td><td>3-5 分钟/样本</td><td>1-2 分钟/样本</td><td class="col-highlight">&lt; 0.5 秒/样本</td></tr>
                 <tr><td>F₁/F₂ 提取精度</td><td>误差 5-10%</td><td>误差 2-5%</td><td class="col-highlight">误差 &lt; 3%</td></tr>
@@ -327,7 +304,7 @@
         </table>
     </section>
 
-    <!-- ==================== 实验报告 ==================== -->
+    <!-- 实验报告 -->
     <section id="report">
         <h2>📝 实验报告生成</h2>
         <p class="section-intro">先运行一次分析（仿真或真实语音均可），再点击下方按钮生成标准格式实验报告</p>
@@ -335,7 +312,7 @@
         <pre id="reportContent" class="report-box">👆 先运行一次分析（仿真或真实语音均可），再点击生成报告</pre>
     </section>
 
-    <!-- ==================== 页脚 ==================== -->
+    <!-- 页脚 -->
     <footer>
         <p>🔊 声纹智析 · AI+物理实验竞赛作品 · 零硬件成本虚拟仿真实验平台</p>
         <p>基于物理声学原理（声源-滤波器理论）· AI驱动分析 · 服务于言语康复教学</p>
